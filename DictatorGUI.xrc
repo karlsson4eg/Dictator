@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxFrame" name="dictMain" subclass="DictMainForm">
+		<style>wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL</style>
+		<size>800,500</size>
+		<title>Dictator</title>
+		<centered>1</centered>
+		<object class="wxMenuBar" name="menubar">
+			<label>MyMenuBar</label>
+			<object class="wxMenu" name="mFile">
+				<label>File</label>
+				<object class="wxMenuItem" name="mNewData">
+					<label>New\tCtrl+N</label>
+					<help></help>
+				</object>
+				<object class="wxMenuItem" name="mOpenData">
+					<label>Open...\tCtrl+O</label>
+					<help></help>
+				</object>
+				<object class="wxMenuItem" name="mSaveData">
+					<label>Save\tCtrl+S</label>
+					<help></help>
+				</object>
+				<object class="wxMenuItem" name="mSaveAsData">
+					<label>Save As...\tCtrl+Shift+S</label>
+					<help></help>
+				</object>
+				<object class="separator" />
+				<object class="wxMenu" name="mImport">
+					<label>Import</label>
+					<object class="wxMenuItem" name="mImportFiles">
+						<label>From file(s)...</label>
+						<help></help>
+					</object>
+					<object class="wxMenuItem" name="mImportDir">
+						<label>From directory...</label>
+						<help></help>
+					</object>
+				</object>
+				<object class="wxMenuItem" name="mExport">
+					<label>Export...</label>
+					<help></help>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="mExit">
+					<label>Exit</label>
+					<help></help>
+				</object>
+			</object>
+			<object class="wxMenu" name="mEdit">
+				<label>Edit</label>
+				<object class="wxMenuItem" name="mNewDict">
+					<label>Add language...</label>
+					<help></help>
+				</object>
+				<object class="wxMenuItem" name="mRemoveDict">
+					<label>Remove language...</label>
+					<help></help>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="mInsertKey">
+					<label>Insert key\tCtrl+A</label>
+					<help></help>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="mCutKey">
+					<label>Cut key\tCtrl+X</label>
+					<help></help>
+				</object>
+				<object class="wxMenuItem" name="mCopyKey">
+					<label>Copy key\tCtrl+C</label>
+					<help></help>
+				</object>
+				<object class="wxMenuItem" name="mPasteKey">
+					<label>Paste key\tCtrl+V</label>
+					<help></help>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="mMoveUp">
+					<label>Move key up\tCtrl+U</label>
+					<help></help>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="mRemoveKey">
+					<label>Remove key\tCtrl+D</label>
+					<help></help>
+				</object>
+			</object>
+			<object class="wxMenu" name="mHelp">
+				<label>Help</label>
+				<object class="wxMenuItem" name="mAbout">
+					<label>About...</label>
+					<help></help>
+				</object>
+			</object>
+		</object>
+		<object class="wxToolBar" name="toolBar">
+			<style>wxTB_FLAT|wxTB_HORIZONTAL|wxTB_NODIVIDER</style>
+			<bitmapsize>32,32</bitmapsize>
+			<margins></margins>
+			<packing>1</packing>
+			<separation>5</separation>
+			<object class="tool" name="tlbNewData">
+				<label>New</label>
+				<tooltip>New</tooltip>
+				<longhelp>New</longhelp>
+				<bitmap>images/new_data.png</bitmap>
+			</object>
+			<object class="tool" name="tlbOpenData">
+				<label>Open</label>
+				<tooltip>Open</tooltip>
+				<longhelp>Open</longhelp>
+				<bitmap>images/open_data.png</bitmap>
+			</object>
+			<object class="tool" name="tlbSaveData">
+				<label>Save</label>
+				<tooltip>Save</tooltip>
+				<longhelp>Save</longhelp>
+				<bitmap>images/save_data.png</bitmap>
+			</object>
+			<object class="separator" />
+			<object class="tool" name="tlbNewDict">
+				<label>tool</label>
+				<tooltip>Add new language</tooltip>
+				<longhelp>Add new language</longhelp>
+				<bitmap>images/new_dict.png</bitmap>
+			</object>
+			<object class="tool" name="tlbRemoveDict">
+				<label>tool</label>
+				<tooltip>Remove existing language</tooltip>
+				<longhelp>Remove existing language</longhelp>
+				<bitmap>images/remove_dict.png</bitmap>
+			</object>
+			<object class="separator" />
+			<object class="tool" name="tlbTranslate">
+				<label>Translate missing key values with Google</label>
+				<tooltip></tooltip>
+				<longhelp>Translate missing key values with Google</longhelp>
+				<bitmap>images/translate.png</bitmap>
+			</object>
+			<object class="separator" />
+			<object class="wxTextCtrl" name="txtSearch">
+				<style>wxTE_PROCESS_ENTER</style>
+				<size>200,28</size>
+				<font>
+					<size>14</size>
+					<family>default</family>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+				</font>
+				<tooltip>Search field. Note: Non-ASCII search is a case-sensitive</tooltip>
+				<value></value>
+				<maxlength>0</maxlength>
+			</object>
+			<object class="separator" />
+			<object class="tool" name="tlbImportFiles">
+				<label>tool</label>
+				<tooltip>Import locale data from a file</tooltip>
+				<longhelp>Import locale data from a file</longhelp>
+				<bitmap>images/import_files.png</bitmap>
+			</object>
+			<object class="tool" name="tlbImportDir">
+				<label>tool</label>
+				<tooltip>Import locales data from a directory</tooltip>
+				<longhelp>Import locales data from a directory</longhelp>
+				<bitmap>images/import_dir.png</bitmap>
+			</object>
+			<object class="tool" name="tlbExport">
+				<label>tool</label>
+				<tooltip>Export data to the files</tooltip>
+				<longhelp>Export data to the files</longhelp>
+				<bitmap>images/export_data.png</bitmap>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="statusBar">
+			<style>wxST_SIZEGRIP</style>
+			<fields>3</fields>
+		</object>
+		<object class="wxPanel" name="main_container">
+			<style>wxTAB_TRAVERSAL</style>
+			<object class="wxBoxSizer">
+				<orient>wxHORIZONTAL</orient>
+				<object class="sizeritem">
+					<option>1</option>
+					<flag>wxEXPAND</flag>
+					<border>1</border>
+					<object class="wxBoxSizer">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxLEFT|wxEXPAND</flag>
+							<border>5</border>
+							<object class="wxToolBar" name="keys_toolbar">
+								<style>wxTB_FLAT|wxTB_HORIZONTAL|wxTB_NODIVIDER</style>
+								<bitmapsize></bitmapsize>
+								<margins></margins>
+								<packing>1</packing>
+								<separation>5</separation>
+								<object class="tool" name="tlbInsertKey">
+									<label>Insert key</label>
+									<tooltip>Insert new key</tooltip>
+									<longhelp>Insert new key</longhelp>
+									<bitmap>images/add.png</bitmap>
+								</object>
+								<object class="separator" />
+								<object class="tool" name="tlbCutKey">
+									<label>tool</label>
+									<tooltip></tooltip>
+									<longhelp></longhelp>
+									<bitmap>images/cut.png</bitmap>
+								</object>
+								<object class="tool" name="tlbCopyKey">
+									<label>tool</label>
+									<tooltip></tooltip>
+									<longhelp></longhelp>
+									<bitmap>images/copy.png</bitmap>
+								</object>
+								<object class="tool" name="tlbPasteKey">
+									<label>tool</label>
+									<tooltip></tooltip>
+									<longhelp></longhelp>
+									<bitmap>images/paste.png</bitmap>
+								</object>
+								<object class="separator" />
+								<object class="tool" name="tlbRemoveKey">
+									<label>Remove key</label>
+									<tooltip>Remove selected key</tooltip>
+									<longhelp>Remove selected key</longhelp>
+									<bitmap>images/delete.png</bitmap>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>1</option>
+							<flag>wxALL|wxEXPAND</flag>
+							<border>5</border>
+							<object class="wxTreeCtrl" name="tree">
+								<style>wxTR_DEFAULT_STYLE|wxTR_EDIT_LABELS</style>
+								<size>350,400</size>
+							</object>
+						</object>
+					</object>
+				</object>
+				<object class="sizeritem">
+					<option>1</option>
+					<flag>wxEXPAND</flag>
+					<border>5</border>
+					<object class="wxBoxSizer">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxALL</flag>
+									<border>5</border>
+									<object class="wxStaticText" name="pathText">
+										<fg>#0000ff</fg>
+										<font>
+											<size>10</size>
+											<family>default</family>
+											<style>normal</style>
+											<weight>normal</weight>
+											<underlined>0</underlined>
+										</font>
+										<label>Scope:</label>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxEXPAND|wxTOP</flag>
+									<border>5</border>
+									<object class="wxTextCtrl" name="pathEdit">
+										<style>wxTE_READONLY|wxNO_BORDER</style>
+										<bg>#f0f0f0</bg>
+										<fg>#0000ff</fg>
+										<font>
+											<size>10</size>
+											<family>default</family>
+											<style>normal</style>
+											<weight>normal</weight>
+											<underlined>0</underlined>
+										</font>
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>1</option>
+							<flag>wxEXPAND | wxALL</flag>
+							<border>5</border>
+							<object class="wxPanel" name="text_container">
+								<style>wxTAB_TRAVERSAL</style>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+</resource>

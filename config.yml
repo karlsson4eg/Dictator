@@ -1,0 +1,20 @@
+--- 
+:formats_available: 
+- :caption: Ruby Hash
+  :export: 
+    :minimize: false
+    :extname: rb
+  :name: :ruby
+  :extname: rb
+- :caption: YAML data
+  :export: 
+    :minimize: false
+    :extname: yml
+  :name: :yaml
+  :extname: yml
+- :caption: JSON data
+  :export: 
+    :minimize: true
+    :extname: js
+  :name: :json
+  :extname: json
