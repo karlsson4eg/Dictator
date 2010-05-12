@@ -2,21 +2,22 @@ Dictator is an open-source tool for a locale dictionaries
 management for the Ruby I18n gem.
 
 ## Installation
-  ** Windows users **
+  * On Windows 
     
-     * Update RubyGems
-          gem update --system
-      
-     * Install required gems
+     - Update RubyGems
+          gem update --system      
+
+     - Install required gems
           gem install wxruby sishen-rtranslate
 
-     * Download Dictator and run it
+     - Download Dictator and run it
           $install_dir\rubyw dictator.rb
 
-  ** Ubuntu/Linux **
-     Follow instructions at http://labs.ibissoft.se/dictator/install_notes.html
+  * On Ubuntu/Linux
+     Follow the instructions at http://labs.ibissoft.se/dictator/install_notes.html
 
 ## Usage
+
       ruby dictator.rb --help
 
 ## LICENSE NOTES
